@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        
+        body {
+  margin: 0;
+}
+
+.robots {
+   /* Remove 'auto' from margin to remove horizontal centering */
+  margin-right: 100pt; /* Add a right margin to push the robot to the right */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 9%; /* Align the robot to the right side */
+}
+.head,
+.left_arm,
+.torso,
+.right_arm,
+.left_leg,
+.right_leg {
+  background-color: rgb(41, 38, 38);
+}
+
+.head {
+  width: 200px;
+  margin: 0 auto;
+  height: 150px;
+  border-radius: 200px 200px 0 0;
+  margin-bottom: 10px;
+}
+
+.eyes {
+  position: relative;
+  top: 100px;
+}
+
+.left_eye,
+.right_eye {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: white;
+  display: inline-block;
+}
+
+.left_eye {
+  margin-left: 30px;
+}
+
+.right_eye {
+  margin-left: 100px;
+}
+
+.upper_body {
+  width: 300px;
+  height: 150px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.left_arm,
+.right_arm {
+  width: 40px;
+  height: 125px;
+  border-radius: 100px;
+  margin-top: 20px;
+}
+
+.left_arm {
+  margin-right: 10px;
+}
+
+.left_arm {
+  margin-right: 10px;
+}
+
+.right_arm {
+  margin-left: 10px;
+}
+
+.torso {
+  width: 200px;
+  height: 200px;
+  border-radius: 0 0 50px 50px;
+  transition: border-radius 1s;
+}
+
+.lower_body {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.left_leg,
+.right_leg {
+  width: 40px;
+  height: 120px;
+  border-radius: 0 0 100px 100px;
+  display: inline-block;
+}
+
+.left_leg {
+  margin-left: 45px;
+}
+
+.right_leg {
+  margin-left: 30px;
+}
+
+.robots:hover .head {
+  animation: movehead 2s infinite;
+}
+
+.robots:hover .torso {
+  border-radius: 40%;
+  animation: movetorso 2s infinite;
+}
+
+.robots:hover .left_arm {
+  animation: moveleftarm 2s infinite;
+}
+
+.robots:hover .right_arm {
+  animation: moverightarm 2s infinite;
+}
+
+.robots:hover .left_leg {
+  animation: moveleftleg 2s infinite;
+}
+
+.robots:hover .right_leg {
+  animation: moverightleg 2s infinite;
+}
+
+@keyframes movehead {
+  0% {
+    width: 200px;
+  }
+
+  25% {
+    width: 300px;
+  }
+
+  50% {
+    width: 200px;
+  }
+
+  75% {
+    width: 300px;
+  }
+
+  100% {
+    width: 200px;
+  }
+}
+
+@keyframes moveleftarm {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top center;
+  }
+
+  25% {
+    transform: rotate(90deg);
+    transform-origin: top center;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    transform-origin: top center;
+  }
+
+  75% {
+    transform: rotate(90deg);
+    transform-origin: top center;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    transform-origin: top center;
+  }
+}
+
+@keyframes moverightarm {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top center;
+  }
+
+  25% {
+    transform: rotate(-90deg);
+    transform-origin: top center;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    transform-origin: top center;
+  }
+
+  75% {
+    transform: rotate(-90deg);
+    transform-origin: top center;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    transform-origin: top center;
+  }
+}
+
+@keyframes moveleftleg {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes moverightleg {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-20deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes movetorso {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+        /* Home Page */
+        
+        body {
+            background-image: url();
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-bar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu-bar h1 {
+            font-weight: bold;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .logout-button {
+            background-color: #f00;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            justify-content: center;
+            height: 50vh;
+        }
+
+        .content-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .safe-container {
+            background-color: rgba(144, 238, 144, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+            display: none;
+        }
+
+        .safe-message {
+            font-size: 18px;
+            color: #008000;
+        }
+
+        .detect-more {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .upload-link {
+            text-decoration: underline;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .box {
+            width: 300pt;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           margin-top: 2%;
+           margin-left: 2%;
+            box-sizing: border-box;
+            text-align: center;
+           
+        }
+        .boxs {
+            width: 300pt;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           margin-top: 2%;
+           margin-left: 2%;
+            box-sizing: border-box;
+            text-align: center;
+           
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color:rgb(41, 38, 38); /* Blue button color */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            text-emphasis-color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .but {
+            width: 35%;
+            padding: 10px;
+            background-color:rgb(41, 38, 38); /* Blue button color */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            text-emphasis-color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+  
+        
+    </div>
+
+
+    {% if user.is_authenticated %}
+   
+    <div class="menu-bar">
+        <h1>Phishing URL Detection System</h1>
+        <button id="but"><a href="/signout">SignOut</a></button>
+    </div>
+    <h3>Hello {{fname}}!</h3>
+    <h4>You're successfully logged in.</h4>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="main-container">
+        <div class="content-container">
+            <form method="POST" action="{% url 'predict_url' %}">
+                {% csrf_token %}
+                <label for="url">Enter URL:</label>
+                <input type="text" name="url" required>
+                <button type="submit">Predict</button>
+            </form>
+            <div id="result-div">  <!-- Define a result-div with an id -->
+                {% if result %}
+                <p>Result: {{ result }}</p>
+                {% endif %}
+            </div>
+            <script>
+                $(document).ready(function() {
+                    // Hide the result div initially
+                    $('#result-div').hide();
+            
+                    // Handle form submission
+                    $('form').on('submit', function(e) {
+                        e.preventDefault(); // Prevent the form from submitting
+            
+                        // Send an AJAX POST request to the predict_url
+                        $.ajax({
+                            type: 'POST',
+                            url: '{% url "predict_url" %}',
+                            data: $('form').serialize(),
+                            success: function(data) {
+                                // Update the result text and show the result div
+                                $('#result-div').html('<p>Result: ' + data.result + '</p>');
+                                $('#result-div').show();
+                            }
+                        });
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{% endfor %}
+    {% else %}
+    <div class="menu-bar">
+        <h1>Covid Detection system</h1>
+     </div>
+     <div class="box">
+     
+        <button type="submit"><a href="/signup">SignUp</a></button>
+    </div>
+   
+    <div class="boxs">
+   
+        <button type="submit"><a href="/signin">SignIn</a></button>
+    
+    </div>
+    <div>
+
+    </div>
+
+    <div class="robots">
+        <div class="android">
+          <div class="head">
+            <div class="eyes">
+              <div class="left_eye"></div>
+              <div class="right_eye"></div>
+            </div>
+          </div>
+          <div class="upper_body">
+            <div class="left_arm"></div>
+            <div class="torso"></div>
+            <div class="right_arm"></div>
+          </div>
+          <div class="lower_body">
+            <div class="left_leg"></div>
+            <div class="right_leg"></div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+     
+   
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong>Message:</strong> {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+</body>
+</html>
